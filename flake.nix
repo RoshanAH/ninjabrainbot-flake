@@ -11,11 +11,14 @@
       imports = [ ];
       systems = [ "x86_64-linux" "aarch64-linux"];
       perSystem = { config, self', inputs', pkgs, system, ... }: {
+
           packages.default = pkgs.callPackage ./package.nix {};
+
           apps.default = { 
               type = "app";
               program = self'.packages.default;
           };
+
       };
       flake = { };
     };
