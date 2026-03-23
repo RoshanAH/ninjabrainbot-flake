@@ -32,7 +32,7 @@ in stdenv.mkDerivation rec {
     cp ${src} $out/share/java/${pname}-${version}.jar
 
     makeWrapper ${jdk}/bin/java $out/bin/${pname} \
-    --add-flags "-jar $out/share/java/${pname}-${version}.jar" \
+    --add-flags "-Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -jar $out/share/java/${pname}-${version}.jar" \
     --set LD_LIBRARY_PATH ${lib.makeLibraryPath JNHookLibs }
   '';
 
