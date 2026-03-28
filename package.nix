@@ -15,11 +15,11 @@
   ];
 in stdenv.mkDerivation rec {
   pname = "NinjaBrain-Bot";
-  version = "1.5.1";
+  version = "1.5.2";
 
   src = fetchurl {
     url = "https://github.com/Ninjabrain1/${pname}/releases/download/${version}/${pname}-${version}.jar";
-    hash = "sha256-Rxu9A2EiTr69fLBUImRv+RLC2LmosawIDyDPIaRcrdw=";
+    hash = "sha256-mAmfYyGpDUrOwTQA6G0F96+NYOVjnC84Qn6WjccUUP8=";
   };
 
   dontUnpack = true;
